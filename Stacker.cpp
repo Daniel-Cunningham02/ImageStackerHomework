@@ -38,17 +38,16 @@ void Stacker::addImage(string filename){
     cerr << "Error: file \"" << filename << "\" is not in PPM format" <<endl;
     return;
   }
-  /**
   infile >> width >> height >> max_color;
   pixels.resize(width * height);
   for(int i = 0; i < width * height; i++){
     int r, g, b;
     infile >> r >> g >> b;
-    pixels[i] = pixels[i] + r;
-    pixels[i] = g;
-    pixels[i] = b;
+    pixels[i] += r;
+    pixels[i] += g;
+    pixels[i] += b;
   }
-  */
+  
   infile.close();
 }
 
