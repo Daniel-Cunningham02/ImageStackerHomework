@@ -21,7 +21,7 @@ public:
   Stacker();
   ~Stacker();
   void addImage(std::string filename);
-  void fileCheck();
+  void writeOutput(std::string filename);
 };
 
 #endif

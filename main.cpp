@@ -23,6 +23,11 @@ int main() {
   cout <<"Please enter the number of images: ";
   cin >> numStack;
   cout << endl;
+  Stacker stacker;
+  for(int i = 0; i < numStack; i++){
+    stacker.addImage(image);
+    stacker.wrtieOutput("output.ppm")
+  }
   
   return 0;
 }
