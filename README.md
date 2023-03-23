@@ -1,5 +1,6 @@
 # CSCI 325 Homework
 
+* Command to download: git clone https://github.com/Daniel-Cunningham02/ImageStackerHomework.git
 * When adding something just comment what you've done and how you've done it so that we don't redo someone else's work.
 * Remember git commit -m "Message here", git push, and git pull when working.
 * git pull grabs the most recent changes and updates your local repository, so you probably want to do that everytime before you start coding.
