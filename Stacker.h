@@ -5,18 +5,23 @@
 
 
 struct pixel {
-    int red;
-    int green;
-    int blue;
+  int red;
+  int green;
+  int blue;
 };
 
 class Stacker {
-    private:
-        std::string magic_number;
-        int width;
-        int height;
-        int max_color;
-        std::vector<pixel> pixels;
+private:
+  std::string magic_number; // the P3 number
+  int width; // the image width
+  int height; // the image height
+  int max_color; // max color depth 
+  std::vector<pixel> pixels; // storing color info
+public:
+  Stacker();
+  ~Stacker();
+  void addImage(std::string filename);
+  void fileCheck();
 };
 
 #endif
