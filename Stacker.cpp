@@ -42,15 +42,16 @@ void Stacker::addImage(string filename){
   }
   infile >> width >> height >> max_color;
   pixels.resize(width * height);
-  /**
   for(int i = 0; i < width * height; i++){
     int r, g, b;
     infile >> r >> g >> b;
-    pixels[i] += r;
-    pixels[i] += g;
-    pixels[i] += b;
+    Pixel pix = new Pixel;
+    pix.red = r;
+    pix.green = g;
+    pix.blue = b;
+    pixels.push_back(pix);
   }
-  */
+  
   infile.close();
 }
 
@@ -63,13 +64,11 @@ void Stacker::writeOutput(string filename){
   outfile << "P3" << endl;
   outfile << width << " " << height << endl;
   outfile << max_color << endl;
-  /**
+  
   for(int i = 0; i < width * height; i++){
-    int r = pixels[i] / max_color;
-    int g = (pixels[i] % max_color) / (max_color / 3);
-    int b = pixels[i] % (max_color / 3);
-    outfile << r << " " << g << " " << b << " ";
+    
+    outfile << pixels[i].red << " " << pixels[i].green << " " << pixels[i].blue << " ";
   }
-  */
+  
   outfile.close();
 }
