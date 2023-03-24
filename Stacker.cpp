@@ -26,7 +26,7 @@ Stacker::Stacker(){
   max_color = 0;
 }
 Stacker::~Stacker(){
-
+  
 }
 void Stacker::addImage(string filename){
   ifstream infile(filename);
@@ -45,11 +45,11 @@ void Stacker::addImage(string filename){
   for(int i = 0; i < width * height; i++){
     int r, g, b;
     infile >> r >> g >> b;
-    Pixel pix;
-    pix.red = r;
-    pix.green = g;
-    pix.blue = b;
-    pixels.push_back(pix);
+    pixels[i].red = r; /* We were declaring a Pixel on the stack which disappears after the method runs
+			  here we are using the dynamically declared Pixel struct in the vector and just modifying it.
+			  No extra memory management. No extra hassle. */
+    pixels[i].green = g;
+    pixels[i].blue = b;
   }
   
   infile.close();
