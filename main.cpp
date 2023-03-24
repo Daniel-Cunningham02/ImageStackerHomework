@@ -26,7 +26,7 @@ int main() {
   Stacker stacker;
   for(int i = 0; i < numStack; i++){
     stacker.addImage(image);
-    stacker.wrtieOutput("output.ppm")
+    stacker.writeOutput("output.ppm");
   }
   
   return 0;

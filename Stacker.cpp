@@ -25,13 +25,15 @@ Stacker::Stacker(){
   height = 0;
   max_color = 0;
 }
+Stacker::~Stacker(){
 
+}
 void Stacker::addImage(string filename){
   ifstream infile(filename);
-  if(!infile.is_open()){
-    cerr << "Error: could not open file \"" << filename << " \"" << endl;
-    return;
-  }
+  // if(!infile.is_open()){
+  //   cerr << "Error: could not open file \"" << filename << " \"" << endl;
+  //   return;
+  // }
   string magic_number;
   infile >> magic_number;
   if(magic_number != "P3"){
@@ -40,6 +42,7 @@ void Stacker::addImage(string filename){
   }
   infile >> width >> height >> max_color;
   pixels.resize(width * height);
+  /**
   for(int i = 0; i < width * height; i++){
     int r, g, b;
     infile >> r >> g >> b;
@@ -47,25 +50,26 @@ void Stacker::addImage(string filename){
     pixels[i] += g;
     pixels[i] += b;
   }
-  
+  */
   infile.close();
 }
 
 void Stacker::writeOutput(string filename){
   ofstream outfile(filename);
-  if(!outfile.is.open()){
-    cerr << "Error: could not open file\"" << filename << "\"" << endl;
-    return;
-  }
+  // if(outfile.open()){
+  //   cerr << "Error: could not open file\"" << filename << "\"" << endl;
+  //   return;
+  //}
   outfile << "P3" << endl;
   outfile << width << " " << height << endl;
   outfile << max_color << endl;
-
+  /**
   for(int i = 0; i < width * height; i++){
     int r = pixels[i] / max_color;
     int g = (pixels[i] % max_color) / (max_color / 3);
     int b = pixels[i] % (max_color / 3);
     outfile << r << " " << g << " " << b << " ";
   }
+  */
   outfile.close();
 }
