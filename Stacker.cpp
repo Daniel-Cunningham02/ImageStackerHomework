@@ -45,7 +45,7 @@ void Stacker::addImage(string filename){
   for(int i = 0; i < width * height; i++){
     int r, g, b;
     infile >> r >> g >> b;
-    Pixel pix = new Pixel;
+    Pixel pix;
     pix.red = r;
     pix.green = g;
     pix.blue = b;

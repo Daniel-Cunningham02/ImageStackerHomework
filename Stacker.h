@@ -4,7 +4,7 @@
 #include <vector>
 
 
-struct pixel {
+struct Pixel {
   int red;
   int green;
   int blue;
@@ -16,7 +16,7 @@ private:
   int width; // the image width
   int height; // the image height
   int max_color; // max color depth 
-  std::vector<pixel> pixels; // storing color info
+  std::vector<Pixel> pixels; // storing color info
 public:
   Stacker();
   ~Stacker();
