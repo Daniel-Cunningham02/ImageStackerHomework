@@ -20,7 +20,7 @@ int main() {
   cout <<"Please enter the image you wish to stack: ";
   cin >> image;
   string temp = image.substr(image.find('/') + 1); // Finds the string from the first slash to the null character
-  string imageName = temp.substr(0, temp.find('/') + 1); // Finds the string from the beginning of the first string slice(temp) to the second slash. This becomes the output name
+  string imageName = temp.substr(0, temp.find('/')); // Finds the string from the beginning of the first string slice(temp) to the second slash. This becomes the output name
   cout << endl;
   cout <<"Please enter the number of images: ";
   cin >> numStack;
@@ -44,7 +44,7 @@ int main() {
     }
   }
   stacker.average(numStack);
-  cout << "Stacking succeeded.";
+  cout << "Stacking succeeded.\n";
   stacker.writeOutput(imageName + ".ppm");
   cout << "Output written to: " << imageName << ".ppm" << endl;
   return 0;
