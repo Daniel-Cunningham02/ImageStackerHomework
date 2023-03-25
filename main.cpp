@@ -1,6 +1,6 @@
 /**
  * @file main.cpp
- * @author Anthony Osborne, Daniel Cunningham, 
+ * @author Anthony Osborne, Daniel Cunningham, Colin Douglas
  * @date 2023-03-23
  * @brief driver code 
  * 

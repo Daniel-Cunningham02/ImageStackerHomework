@@ -1,3 +1,12 @@
+/**
+ * @file Stacker.h
+ * @author Anthony Osborne, Daniel Cunningham, Colin Douglas
+ * @date 2023-03-24
+ * @brief Header file for Stacker
+ * 
+ * contains the functions for the stacker class and the Pixel struct
+ */
+
 #ifndef STACKER_H
 #define STACKER_H
 #include <string>
