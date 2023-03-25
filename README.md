@@ -17,8 +17,8 @@
 ## Todo
 
 - [X] Reading one ppm file.
-- [X] Reading multiple ppm files.
-- [X] Averaging of the values between multiple files by creating three separate averages for red, green, and blue and then adding them together into the vector using the pixel struct.
-- [X] Writing the averages of files to a new ppm file.
+- [ ] Reading multiple ppm files.
+- [ ] Averaging of the values between multiple files by creating three separate averages for red, green, and blue and then adding them together into the vector using the pixel struct.
+- [ ] Writing the averages of files to a new ppm file.
 
 * You can add other todos here if you think of anymore.

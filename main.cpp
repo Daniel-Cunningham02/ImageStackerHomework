@@ -17,28 +17,34 @@ using namespace std;
 int main() {
   string image;
   int numStack;
-  cout <<"Please enter the folder path of the images you wish to stack: ";
+  cout <<"Please enter the image you wish to stack: ";
   cin >> image;
+  string temp = image.substr(image.find('/') + 1);
+  string imageName = temp.substr(0, image.find('/') + 1);
+  cout << imageName;
   cout << endl;
   cout <<"Please enter the number of images: ";
   cin >> numStack;
   cout << endl;
   Stacker stacker;
-  for(int i = 0; i < numStack - 1; i++){
+  for(int i = 0; i < numStack; i++){
     if(i != 0) {
-      if(i < 10) {
-        stacker.stackImage(image + "_00" + to_string(i) + ".ppm");  
+      if((i+1) < 10) {
+        stacker.stackImage(image + "_00" + to_string(i + 1) + ".ppm"); 
+        cout << "\t" << image << "_00" << i + 1 << ".ppm" << endl;
       }
       else {
-        stacker.stackImage(image + "_0" + to_string(i) + ".ppm");
+        stacker.stackImage(image + "_0" + to_string(i + 1) + ".ppm");
+        cout << "\t" << image << "_0" << i + 1 << ".ppm" << endl;
       }
       
     }
     else {
       stacker.addImage(image + "_001.ppm");
+      cout << "Stacking images:\n\t" << image << "_001.ppm" << endl;  
     }
   }
   stacker.average(numStack);
-  stacker.writeOutput("output.ppm");
+  stacker.writeOutput(imageName + ".ppm");
   return 0;
 }
