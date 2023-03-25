@@ -21,6 +21,8 @@ public:
   Stacker();
   ~Stacker();
   void addImage(std::string filename);
+  void average(int numStack);
+  void stackImage(std::string filename); // added this to differentiate between adding base images and stacked images
   void writeOutput(std::string filename);
 };
 
