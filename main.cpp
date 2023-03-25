@@ -19,9 +19,8 @@ int main() {
   int numStack;
   cout <<"Please enter the image you wish to stack: ";
   cin >> image;
-  string temp = image.substr(image.find('/') + 1);
-  string imageName = temp.substr(0, image.find('/') + 1);
-  cout << imageName;
+  string temp = image.substr(image.find('/') + 1); // Finds the string from the first slash to the null character
+  string imageName = temp.substr(0, image.find('/') + 1); // Finds the string from the beginning of the first string slice(temp) to the second slash. This becomes the output name
   cout << endl;
   cout <<"Please enter the number of images: ";
   cin >> numStack;
@@ -30,11 +29,11 @@ int main() {
   for(int i = 0; i < numStack; i++){
     if(i != 0) {
       if((i+1) < 10) {
-        stacker.stackImage(image + "_00" + to_string(i + 1) + ".ppm"); 
+        stacker.stackImage(image + "_00" + to_string(i + 1) + ".ppm");  // String concatenation to get the correct image file
         cout << "\t" << image << "_00" << i + 1 << ".ppm" << endl;
       }
       else {
-        stacker.stackImage(image + "_0" + to_string(i + 1) + ".ppm");
+        stacker.stackImage(image + "_0" + to_string(i + 1) + ".ppm"); // String concatenation to get the correct image file
         cout << "\t" << image << "_0" << i + 1 << ".ppm" << endl;
       }
       
@@ -45,6 +44,8 @@ int main() {
     }
   }
   stacker.average(numStack);
+  cout << "Stacking succeeded.";
   stacker.writeOutput(imageName + ".ppm");
+  cout << "Output written to: " << imageName << ".ppm" << endl;
   return 0;
 }
