@@ -65,10 +65,6 @@ void Stacker::average(int numStack) {
 
 void Stacker::addImage(string filename){
   ifstream infile(filename);
-  // if(!infile.is_open()){
-  //   cerr << "Error: could not open file \"" << filename << " \"" << endl;
-  //   return;
-  // }
   string magic_number;
   infile >> magic_number;
   if(magic_number != "P3"){
@@ -92,10 +88,7 @@ void Stacker::addImage(string filename){
 
 void Stacker::writeOutput(string filename){
   ofstream outfile(filename);
-  // if(outfile.open()){
-  //   cerr << "Error: could not open file\"" << filename << "\"" << endl;
-  //   return;
-  //}
+
   outfile << "P3" << endl;
   outfile << width << " " << height << endl;
   outfile << max_color << endl;
