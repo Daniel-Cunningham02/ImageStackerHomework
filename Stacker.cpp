@@ -3,7 +3,8 @@
  * @author Anthony Osborne, Daniel Cunningham, Colin Douglas
  * @date 2023-03-23
  * @brief Implementation of the stacker class
- * 
+ * Implements the functions for the Stacker class
+ * includes constructor stackImage, and write to file, etc.
  * 
  */
 
@@ -68,6 +69,16 @@ void Stacker::stackImage(string filename) {
   inFile.close();
 }
 
+
+/**
+ * averages the color values over the stacked images
+ *
+ * @param int numStack the number of images to stack
+ * @pre stacker 
+ * @return void 
+ * @post 
+ * 
+ */
 void Stacker::average(int numStack) {
   for(int i = 0; i < (width*height); i++) {
     pixels[i].red /= numStack;

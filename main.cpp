@@ -3,7 +3,8 @@
  * @author Anthony Osborne, Daniel Cunningham, Colin Douglas
  * @date 2023-03-23
  * @brief driver code 
- * 
+ * This is the main code for running the stacker program
+ * The desired file must have it's path specified
  * 
  */
 
