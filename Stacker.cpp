@@ -17,9 +17,14 @@
 using namespace std;
 
 
-/**IK i should implement others first but i was pretty sure i could load 
-images more easily than i could implement the other functions.
-*/
+
+/**
+ * constructor
+ *
+ * @pre none
+ * @post stacker is created 
+ * 
+ */
 Stacker::Stacker(){
   width = 0;
   height = 0;
@@ -27,6 +32,16 @@ Stacker::Stacker(){
 }
 
 
+
+/**
+ * Stacker funciton 
+ *
+ * @param string filename image filename
+ * @pre stacker must be established
+ * @return void 
+ * @post 
+ * 
+ */
 void Stacker::stackImage(string filename) {
   ifstream inFile(filename);
   string header;
@@ -61,6 +76,16 @@ void Stacker::average(int numStack) {
   }
 }
 
+
+/**
+ * adds a image to the stack
+ *
+ * @param string filename the filename of the image
+ * @pre stacker must be established
+ * @return void 
+ * @post image added to the stack
+ * 
+ */
 void Stacker::addImage(string filename){
   ifstream infile(filename);
   string magic_number;
@@ -84,6 +109,16 @@ void Stacker::addImage(string filename){
   infile.close();
 }
 
+
+/**
+ * writes the stacked image to the output ppm file
+ *
+ * @param string filename the output file name
+ * @pre stacker and an image stack 
+ * @return void 
+ * @post an output file with the stacked image
+ * 
+ */
 void Stacker::writeOutput(string filename){
   ofstream outfile(filename);
 
