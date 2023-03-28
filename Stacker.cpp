@@ -25,9 +25,7 @@ Stacker::Stacker(){
   height = 0;
   max_color = 0;
 }
-Stacker::~Stacker(){
-  
-}
+
 
 void Stacker::stackImage(string filename) {
   ifstream inFile(filename);
